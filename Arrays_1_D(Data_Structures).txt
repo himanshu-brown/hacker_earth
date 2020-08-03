@@ -1,0 +1,22 @@
+import java.util.*;
+import java.lang.*;
+
+class TestClass{
+        public static void main(String args[]) throws Exception{
+        Scanner scan = new Scanner(System.in);
+        int arr[] = new int[100];
+        int i=0,t=0;
+        int n = scan.nextInt();
+        for(i=0;i<n;i++){
+            arr[i]=scan.nextInt();
+        }
+        for(i=0;i<n/2;i++){
+            t=arr[i];
+            arr[i]=arr[n-i-1];
+            arr[n-i-1]=t;
+        }
+        for(i=0;i<n;i++){
+            System.out.println(arr[i]);
+        }
+    }
+}
