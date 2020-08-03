@@ -1,0 +1,22 @@
+import java.util.*;
+import java.lang.*;
+class TestClass{
+    public static void main(String args[]) throws Exception{
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int m = scan.nextInt();
+        int arr[][] = new int[n][m];
+        int i=0,j=0;
+        for(i=0;i<n;i++){
+            for(j=0;j<m;j++){
+                arr[i][j] = scan.nextInt();
+            }
+        }
+        for(i=0;i<m;i++){
+            for(j=0;j<n;j++){
+                System.out.print(arr[j][i]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
