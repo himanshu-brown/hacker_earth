@@ -1,0 +1,47 @@
+import java.util.*;
+import java.lang.*;
+class Queue{
+    int arr[] = new int[100];
+    int front = -1 , rear = -1;
+    void enqueue(int element){
+        if(rear == arr.length-1)
+        System.out.println("Queue overflow");
+        else{
+           if(front == rear){
+                front++;
+                rear++;
+           }
+           arr[rear++] = element;
+        }
+        System.out.println(rear - front);
+    }
+    void dequeue(){
+        if(front == rear)
+        System.out.print("-1"+" ");
+        else{
+            System.out.print(arr[front]+" ");
+            arr[front++] = 0;
+        }
+        System.out.println(rear - front);
+    }
+}
+class TestClass{
+    public static void main(String args[]) throws Exception{
+        Scanner scan = new Scanner(System.in);
+        Queue obj = new Queue();
+        int n = scan.nextInt();
+        int i=0;
+        for(i=0;i<n;i++){
+            char c = scan.next().charAt(0);
+            if(c == 'E'){
+                int element = scan.nextInt();
+                obj.enqueue(element);
+            }
+            else{
+                obj.dequeue();
+            }
+            
+
+        }
+    }
+}
