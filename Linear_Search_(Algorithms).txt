@@ -1,0 +1,22 @@
+import java.util.*;
+import java.io.*;
+class Solution{
+    public static void main(String args[])throws Exception{
+        Scanner scan = new Scanner(System.in);
+        int size_of_array = scan.nextInt();
+        int search_element = scan.nextInt();
+        int i=1 , index=-1;
+        int arr[] = new int[size_of_array];
+
+        for(i=0;i<size_of_array;i++){
+            arr[i] = scan.nextInt();
+        }
+
+        for(i=0;i<size_of_array;i++){
+            if(search_element == arr[i])
+            index = i;
+        }
+
+        System.out.println(++index);
+    }
+}
