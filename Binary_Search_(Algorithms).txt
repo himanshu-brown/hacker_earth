@@ -1,0 +1,46 @@
+import java.util.*;
+import java.io.*;
+import java.util.Arrays;
+class Binary_Search{
+    int search(int arr[] , int low , int high , int query){
+      int flag =0,mid=0;
+        while(low<=high){
+            mid = (low+high)/2;
+            if(query == arr[mid]){
+                flag =1;
+                break;
+            }
+            
+            else if(query < arr[mid])
+            high = mid - 1;
+            else
+            low = mid + 1;
+        }
+        if(flag==1)
+        return ++mid;
+        else
+        return -1;
+    }
+}
+class Solution{
+    public static void main(String args[])throws Exception{
+        Scanner scan = new Scanner(System.in);
+        Binary_Search obj = new Binary_Search();
+        int size_of_array = scan.nextInt();
+        int i=0,query_size=0,low=0,high=size_of_array-1,result=0;
+        int arr[] = new int[size_of_array];
+        for(i=0;i<size_of_array;i++){
+            arr[i] = scan.nextInt();
+        }
+
+        query_size = scan.nextInt();
+        Arrays.sort(arr);
+
+        for(i=0;i<query_size;i++){
+            low = 0;
+            high = size_of_array - 1;
+            result = obj.search(arr,low,high,scan.nextInt());
+            System.out.println(result);
+        }
+    }
+}
