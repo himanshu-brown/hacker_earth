@@ -1,0 +1,29 @@
+import java.util.*;
+import java.io.*;
+class Solution{
+    public static void main(String args[]) throws Exception{
+        Scanner scan = new Scanner(System.in);
+        int size_of_array = scan.nextInt();
+        int step = scan.nextInt();
+        int i=0 , j=0 , min=0 , temp=0;
+        int arr[] = new int[size_of_array];
+        for(i=0;i<size_of_array;i++){
+            arr[i] = scan.nextInt();
+        }
+        for(i=0;i<step;i++){
+            min = i;
+            for(j=i+1;j<size_of_array;j++){
+                if(arr[j]<arr[min])
+                min = j;
+            }
+                if(min!=i){
+                temp = arr[min];
+                arr[min] = arr[i];
+                arr[i] = temp; 
+                }
+        }
+        for(i=0;i<size_of_array;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
